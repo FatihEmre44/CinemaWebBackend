@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const chalk = require("chalk");
 const connectDB = require('./database/database');
+const loginrouter = require("./routers/loginrouter");
 
 dotenv.config(); // .env dosyasındaki verileri okur
 connectDB();
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 });
 
 // 4. Rotalar (İleride burayı dolduracağız)
+app.use("/api",loginrouter);
 
 // 5. Sunucuyu Başlatma
 app.listen(PORT, () => {
