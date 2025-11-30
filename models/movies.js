@@ -3,11 +3,8 @@ const mongoose = require('mongoose');
 const movieSchema = new mongoose.Schema({
     title: {
         type: String,
+        unique: true,
         required: [true, 'Film adı zorunludur'],
-        trim: true
-    },
-    originalTitle: { // Filmin orijinal adı (Opsiyonel)
-        type: String,
         trim: true
     },
     description: {
@@ -16,22 +13,22 @@ const movieSchema = new mongoose.Schema({
     },
     duration: {
         type: Number,
-        required: [true, 'Film süresi (dakika) zorunludur'] 
+        required: [true, 'Film süresi (dakika) zorunludur']
     },
-    genre: [{ 
+    genre: [{
         type: String,
-        required: true 
+        required: true
     }], // Örnek: ["Aksiyon", "Bilim Kurgu"]
-    
+
     director: {
         type: String,
         required: true
     },
-    cast: [{ 
-        type: String 
+    cast: [{
+        type: String
     }], // Oyuncular array olarak tutulur
     backdropImage: { // Detay sayfasındaki büyük arka plan resmi
-        type: String 
+        type: String
     },
     rating: {
         type: Number,
