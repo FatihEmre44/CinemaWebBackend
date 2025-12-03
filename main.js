@@ -8,6 +8,7 @@ const connectDB = require('./database/database');
 const loginrouter = require("./routers/loginrouter");
 const movierouter = require("./routers/movierouters");
 const hallrouter = require("./routers/hallrouters");
+const sessionrouter = require("./routers/sessionrouter");
 
 dotenv.config(); // .env dosyasındaki verileri okur
 connectDB();
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 app.use("/api", loginrouter);
 app.use("/api", movierouter);
 app.use("/api", hallrouter);
+app.use("/api", sessionrouter);
 
 
 

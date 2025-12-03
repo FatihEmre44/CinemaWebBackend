@@ -19,6 +19,10 @@ const sessionSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Bilet fiyatı zorunludur']
     },
+    endTime: {
+        type: Date,
+        required: true
+    },
     soldSeats: [{ // Bu seansta satılmış koltuklar
         type: String // ["A1", "A2", "C5"]
     }]
