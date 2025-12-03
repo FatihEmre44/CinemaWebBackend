@@ -127,7 +127,7 @@ exports.updateSession = async (req, res) => {
         });
     }
 };
-exports.deleteSession = async (req, res) => {
+exports.deletesession = async (req, res) => {
     try {
         const { id } = req.params;
 
