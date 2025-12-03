@@ -29,7 +29,7 @@ const verifyToken = (req, res, next) => {
         // 3. Token'ı Doğrula (Verify)
         // 'GIZLI_ANAHTAR_BURAYA': Login olurken kullandığın gizli anahtarla AYNI olmalı
         // .env dosyası kullanıyorsan: process.env.JWT_SECRET
-        const decoded = jwt.verify(token, 'GIZLI_ANAHTAR_BURAYA');
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
         // 4. Token geçerliyse, içindeki bilgileri (id, role vb.) isteğe ekle
         // Artık sonraki fonksiyonlarda (addmovie gibi) req.user diyerek bu kişiye ulaşabilirsin.
